@@ -27,10 +27,11 @@ public class Product {
     public Product() {
     }
 
-    public Product(String name, String description, double price) {
+    public Product(String name, String description, double price, Category category) {
         this.name = name;
         this.description = description;
         this.price = price;
+        this.category = category;
     }
 
     //ID getters & setters
