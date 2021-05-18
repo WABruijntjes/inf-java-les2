@@ -2,6 +2,7 @@ package nl.inholland.infjavales2.controller;
 
 import nl.inholland.infjavales2.model.Product;
 import nl.inholland.infjavales2.service.ProductService;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -17,6 +18,7 @@ public class ProductController {
     }
 
     @GetMapping
+    @PreAuthorize("hasRole('ADMIN')")
     public List<Product> getAllProducts(){
         return pService.getAllProducts();
     }

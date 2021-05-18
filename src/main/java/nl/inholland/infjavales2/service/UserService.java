@@ -13,6 +13,8 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.web.server.ResponseStatusException;
 
+import java.util.List;
+
 @Service
 public class UserService {
 
@@ -52,4 +54,6 @@ public class UserService {
             throw new ResponseStatusException(HttpStatus.UNPROCESSABLE_ENTITY, "Username already in use");
         }
     }
+
+    public List<User> getAllUsers(){ return userRepository.findAll();}
 }
